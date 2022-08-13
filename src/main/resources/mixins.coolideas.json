@@ -9,5 +9,9 @@
   "refmap": "coolideas.mixin-refmap.json",
   "mixins": [
     "MultiShotEnchantmentMixin"
+  ],
+  "client": [
+    "ClientLevelMixin",
+    "ClientPacketListenerMixin"
   ]
 }
