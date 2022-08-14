@@ -138,7 +138,7 @@ public class ModMismatchScreen extends Screen {
                         .append(")")
                         .withStyle(ChatFormatting.GREEN)
                 );
-            drawCenteredString(matrixStack, this.font, Component.translatable(MESSAGE_MODLOADER), this.width / 2, pos, 16777215);
+            drawCenteredString(matrixStack, this.font, toShow, this.width / 2, pos, 16777215);
             pos += 20;
         }
         if (!serverModVersion.equals(clientModVersion)) {
