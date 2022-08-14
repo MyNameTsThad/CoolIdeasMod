@@ -2,7 +2,7 @@ package com.thaddev.coolideas.mechanics.inits;
 
 import com.thaddev.coolideas.CoolIdeasMod;
 import com.thaddev.coolideas.content.effects.VulnerabilityEffect;
-import com.thaddev.coolideas.util.ColorUtils;
+import com.thaddev.coolideas.util.Utils;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
 import net.minecraft.util.Identifier;
@@ -15,7 +15,7 @@ public class EffectInit {
         return Registry.register(
             Registry.STATUS_EFFECT,
             new Identifier(CoolIdeasMod.MODID, name),
-            new VulnerabilityEffect(StatusEffectCategory.HARMFUL, ColorUtils.rgbToInteger(50, 0, 0)));
+            new VulnerabilityEffect(StatusEffectCategory.HARMFUL, Utils.rgbToInteger(50, 0, 0)));
     }
 
     public static void registerEffects() {

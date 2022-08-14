@@ -1,7 +1,7 @@
 package com.thaddev.coolideas.content.items.weapons;
 
 import com.thaddev.coolideas.mechanics.inits.ItemInit;
-import com.thaddev.coolideas.util.ColorUtils;
+import com.thaddev.coolideas.util.Utils;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.text.Text;
@@ -11,7 +11,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-import static com.thaddev.coolideas.util.ColorUtils.component;
+import static com.thaddev.coolideas.util.Utils.component;
 
 public class DiamondShortBowItem extends ShortBowBase {
 
@@ -46,7 +46,7 @@ public class DiamondShortBowItem extends ShortBowBase {
 
     @Override
     public void appendTooltip(@NotNull ItemStack stack, @Nullable World world, @NotNull List<Text> tooltip, @NotNull TooltipContext context) {
-        tooltip.add(component(ColorUtils.fromNoTag("(%$blue)Shoots Instantly! (%$italic)Make sure to not hit yourself!")));
+        tooltip.add(component(Utils.fromNoTag("(%$blue)Shoots Instantly! (%$italic)Make sure to not hit yourself!")));
         super.appendTooltip(stack, world, tooltip, context);
     }
 
