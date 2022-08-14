@@ -1,9 +1,8 @@
 package com.thaddev.coolideas.content.items.weapons;
 
 import com.thaddev.coolideas.mechanics.inits.ItemInit;
-import com.thaddev.coolideas.util.ColorUtils;
+import com.thaddev.coolideas.util.Utils;
 import net.minecraft.network.chat.Component;
-import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.TooltipFlag;
@@ -13,7 +12,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-import static com.thaddev.coolideas.util.ColorUtils.component;
+import static com.thaddev.coolideas.util.Utils.component;
 
 public class WoodenShortBowItem extends ShortBowBase {
     public WoodenShortBowItem(Properties properties) {
@@ -47,7 +46,7 @@ public class WoodenShortBowItem extends ShortBowBase {
 
     @Override
     public void appendHoverText(@NotNull ItemStack stack, @Nullable Level world, @NotNull List<Component> tooltip, @NotNull TooltipFlag flags) {
-        tooltip.add(component(ColorUtils.fromNoTag("(%$green)Shoots Instantly! (%$italic)beware... it can break easily!")));
+        tooltip.add(component(Utils.fromNoTag("(%$green)Shoots Instantly! (%$italic)beware... it can break easily!")));
         super.appendHoverText(stack, world, tooltip, flags);
     }
 

@@ -1,7 +1,6 @@
 package com.thaddev.coolideas.content.items.materials;
 
-import com.thaddev.coolideas.content.items.weapons.ShortBowBase;
-import com.thaddev.coolideas.util.ColorUtils;
+import com.thaddev.coolideas.util.Utils;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.Item;
@@ -12,7 +11,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-import static com.thaddev.coolideas.util.ColorUtils.component;
+import static com.thaddev.coolideas.util.Utils.component;
 
 public class MicrochipItem extends Item {
     MicrochipTypes type;
@@ -25,7 +24,7 @@ public class MicrochipItem extends Item {
     public void appendHoverText(ItemStack thisStack, @Nullable Level world, List<Component> tag, TooltipFlag flags) {
         MicrochipTypes type;
         if ((type = getType(thisStack)) != null) {
-            tag.add(component(ColorUtils.fromNoTag(type.getName())));
+            tag.add(component(Utils.fromNoTag(type.getName())));
         }
         super.appendHoverText(thisStack, world, tag, flags);
     }
