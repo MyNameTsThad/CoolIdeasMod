@@ -4,7 +4,7 @@ import com.thaddev.coolideas.content.entities.projectiles.DiamondHeadedArrow;
 import com.thaddev.coolideas.content.entities.projectiles.ShortBowArrow;
 import com.thaddev.coolideas.mechanics.damagesources.RubberBandHitDamage;
 import com.thaddev.coolideas.mechanics.inits.EnchantmentInit;
-import com.thaddev.coolideas.util.ColorUtils;
+import com.thaddev.coolideas.util.Utils;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.Enchantments;
@@ -31,7 +31,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-import static com.thaddev.coolideas.util.ColorUtils.component;
+import static com.thaddev.coolideas.util.Utils.component;
 
 public class ShortBowBase extends BowItem {
 
@@ -211,7 +211,7 @@ public class ShortBowBase extends BowItem {
     @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
         if (doesHomeArrow(stack)) {
-            tooltip.add(component(ColorUtils.fromNoTag("(%$green)Homing")));
+            tooltip.add(component(Utils.fromNoTag("(%$green)Homing")));
         }
         super.appendTooltip(stack, world, tooltip, context);
     }

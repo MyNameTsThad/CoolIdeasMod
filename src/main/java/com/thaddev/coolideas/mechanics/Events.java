@@ -4,11 +4,15 @@ package com.thaddev.coolideas.mechanics;
 import com.thaddev.coolideas.CoolIdeasMod;
 import com.thaddev.coolideas.mechanics.inits.ItemInit;
 import com.thaddev.coolideas.mechanics.inits.TagsInit;
+import com.thaddev.coolideas.util.Utils;
+import net.fabricmc.fabric.api.client.rendering.v1.HudRenderCallback;
 import net.fabricmc.fabric.api.event.player.UseBlockCallback;
+import net.fabricmc.fabric.api.networking.v1.ServerPlayConnectionEvents;
 import net.minecraft.advancement.criterion.Criteria;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.client.MinecraftClient;
 import net.minecraft.entity.ItemEntity;
 import net.minecraft.item.AxeItem;
 import net.minecraft.item.ItemStack;
@@ -16,11 +20,17 @@ import net.minecraft.item.Items;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
+import net.minecraft.text.ClickEvent;
+import net.minecraft.text.Style;
+import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
+import net.minecraft.util.Formatting;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 
 import java.util.HashMap;
+
+import static com.thaddev.coolideas.util.Utils.component;
 
 public class Events {
     private static final HashMap<Block, Block> STRIPPED_BLOCKS = new HashMap<>();
@@ -81,6 +91,31 @@ public class Events {
                 }
             }
             return ActionResult.PASS;
+        });
+
+        ServerPlayConnectionEvents.JOIN.register((handler, sender, server) -> {
+            String loader = server.getServerModName().toLowerCase();
+            handler.player.sendMessage(
+                component(Utils.from("")).copy()
+                    .append(Text.of("https://github.com/MyNameTsThad/CoolIdeasMod/blob/forge-119/README.md#ignore-if-you-did-not-come-from-an-in-game-chat-message").copy().setStyle(
+                        Style.EMPTY
+                            .withClickEvent(new ClickEvent(ClickEvent.Action.OPEN_URL, "https://github.com/MyNameTsThad/CoolIdeasMod/blob/forge-119/README.md#ignore-if-you-did-not-come-from-an-in-game-chat-message"))
+                            .withColor(Formatting.BLUE)
+                            .withUnderline(true)
+                    ))
+                    .append(Text.of(" (versionid:" + CoolIdeasMod.buildVersionString(loader) + ")"))
+            );
+        });
+
+        HudRenderCallback.EVENT.register((matrixStack, tickDelta) -> {
+            if (CoolIdeasMod.instance.isMismatching) {
+                MinecraftClient.getInstance().textRenderer.drawWithShadow(matrixStack, Utils.fromNoTag("(%$white)(%$bold)(%$underline)Version Mismatch! (from CoolIdeasMod)"), 10, 10, 100);
+                MinecraftClient.getInstance().textRenderer.drawWithShadow(matrixStack, Utils.fromNoTag("(%$white)Please change your modloader / mod version to match"), 10, 22, 100);
+                MinecraftClient.getInstance().textRenderer.drawWithShadow(matrixStack, Utils.fromNoTag("(%$white)the server modloader / mod version in the warning"), 10, 32, 100);
+                MinecraftClient.getInstance().textRenderer.drawWithShadow(matrixStack, Utils.fromNoTag("(%$white)message displayed when you join!"), 10, 42, 100);
+                MinecraftClient.getInstance().textRenderer.drawWithShadow(matrixStack, Utils.fromNoTag("(%$gold)(%$underline)If you encounter a bug and report it, Anything that happens in"), 10, 62, 100);
+                MinecraftClient.getInstance().textRenderer.drawWithShadow(matrixStack, Utils.fromNoTag("(%$gold)(%$underline)this server connection instance will not be considered valid evidence."), 10, 74, 100);
+            }
         });
     }
 }
