@@ -1,0 +1,58 @@
+{
+  "variants": {
+    "container_count=1,filled=false": {
+      "model": "coolideas:block/soul_vial_one"
+    },
+    "container_count=1,filled=true": {
+      "model": "coolideas:block/soul_vial_one_filled"
+    },
+    "container_count=2,filled=false": {
+      "model": "coolideas:block/soul_vial_two"
+    },
+    "container_count=2,filled=true": {
+      "model": "coolideas:block/soul_vial_two_filled"
+    },
+    "container_count=3,filled=false": {
+      "model": "coolideas:block/soul_vial_three"
+    },
+    "container_count=3,filled=true": {
+      "model": "coolideas:block/soul_vial_three_filled"
+    },
+    "container_count=4,filled=false": {
+      "model": "coolideas:block/soul_vial_four"
+    },
+    "container_count=4,filled=true": {
+      "model": "coolideas:block/soul_vial_four_filled"
+    },
+    "container_count=5,filled=false": {
+      "model": "coolideas:block/soul_vial_five"
+    },
+    "container_count=5,filled=true": {
+      "model": "coolideas:block/soul_vial_five_filled"
+    },
+    "container_count=6,filled=false": {
+      "model": "coolideas:block/soul_vial_six"
+    },
+    "container_count=6,filled=true": {
+      "model": "coolideas:block/soul_vial_six_filled"
+    },
+    "container_count=7,filled=false": {
+      "model": "coolideas:block/soul_vial_seven"
+    },
+    "container_count=7,filled=true": {
+      "model": "coolideas:block/soul_vial_seven_filled"
+    },
+    "container_count=8,filled=false": {
+      "model": "coolideas:block/soul_vial_eight"
+    },
+    "container_count=8,filled=true": {
+      "model": "coolideas:block/soul_vial_eight_filled"
+    },
+    "container_count=9,filled=false": {
+      "model": "coolideas:block/soul_vial_nine"
+    },
+    "container_count=9,filled=true": {
+      "model": "coolideas:block/soul_vial_nine_filled"
+    }
+  }
+}

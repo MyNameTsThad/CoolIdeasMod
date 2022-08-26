@@ -8,10 +8,12 @@ import com.thaddev.coolideas.mechanics.inits.EnchantmentInit;
 import com.thaddev.coolideas.mechanics.inits.EntityTypeInit;
 import com.thaddev.coolideas.mechanics.inits.GlobalLootModifierInit;
 import com.thaddev.coolideas.mechanics.inits.ItemInit;
+import com.thaddev.coolideas.mechanics.inits.ItemPropertiesInit;
 import com.thaddev.coolideas.mechanics.inits.PlacedFeaturesInit;
 import com.thaddev.coolideas.mechanics.inits.PotionInit;
 import com.thaddev.coolideas.mechanics.inits.PotionRecipeInit;
 import com.thaddev.coolideas.mechanics.inits.RecipeSerializerInit;
+import com.thaddev.coolideas.mechanics.networking.Packets;
 import net.minecraft.SharedConstants;
 import net.minecraft.client.Minecraft;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -26,7 +28,7 @@ public class CoolIdeasMod {
     public static final String MODID = "coolideas";
     public static final Logger LOGGER = LogUtils.getLogger();
     public static CoolIdeasMod instance;
-    public static String VERSION = "1.8.0";
+    public static String VERSION = "2.0.0-alpha1";
 
     public static final String MESSAGE_WELCOME = "message.coolideas.welcome";
     public static final String SCREEN_VERSION_MISMATCH = "menu.coolideas.modmismatch";
@@ -43,12 +45,12 @@ public class CoolIdeasMod {
         CoolIdeasMod.LOGGER.info("Initializing CoolIdeasMod version {}", VERSION);
 
         modEventBus.addListener(this::setup);
+        BlockInit.BLOCKS.register(modEventBus);
         ItemInit.ITEMS.register(modEventBus);
         EntityTypeInit.ENTITIES.register(modEventBus);
         EnchantmentInit.ENCHANTMENTS.register(modEventBus);
         EffectInit.MOB_EFFECTS.register(modEventBus);
         PotionInit.POTIONS.register(modEventBus);
-        BlockInit.BLOCKS.register(modEventBus);
         ConfiguredFeaturesInit.CONFIGURED_FEATURES.register(modEventBus);
         PlacedFeaturesInit.PLACED_FEATURES.register(modEventBus);
         GlobalLootModifierInit.GLOBAL_LOOT_MODIFIERS.register(modEventBus);
@@ -56,7 +58,11 @@ public class CoolIdeasMod {
     }
 
     public void setup(final FMLCommonSetupEvent event) {
-        event.enqueueWork(PotionRecipeInit::register);
+        event.enqueueWork(() -> {
+            Packets.register();
+            PotionRecipeInit.register();
+            ItemPropertiesInit.register();
+        });
     }
 
     public static String buildVersionString(String modLoader) {

@@ -1,8 +1,8 @@
 package com.thaddev.coolideas.mechanics.inits;
 
 import com.thaddev.coolideas.CoolIdeasMod;
+import com.thaddev.coolideas.Utils;
 import com.thaddev.coolideas.content.effects.VulnerabilityEffect;
-import com.thaddev.coolideas.util.Utils;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraftforge.registries.DeferredRegister;

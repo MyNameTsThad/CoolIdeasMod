@@ -3,22 +3,33 @@ package com.thaddev.coolideas.mechanics.inits;
 import com.thaddev.coolideas.CoolIdeasMod;
 import com.thaddev.coolideas.content.items.materials.MicrochipItem;
 import com.thaddev.coolideas.content.items.materials.SiliconPCBItem;
+import com.thaddev.coolideas.content.items.materials.SoulContainerBlockItem;
 import com.thaddev.coolideas.content.items.tools.TweezersItem;
 import com.thaddev.coolideas.content.items.weapons.DiamondHeadedArrowItem;
 import com.thaddev.coolideas.content.items.weapons.DiamondShortBowItem;
 import com.thaddev.coolideas.content.items.weapons.IronShortBowItem;
+import com.thaddev.coolideas.content.items.weapons.ScytheItem;
 import com.thaddev.coolideas.content.items.weapons.TippedDiamondHeadedArrowItem;
 import com.thaddev.coolideas.content.items.weapons.WoodenShortBowItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.Rarity;
+import net.minecraft.world.item.Tiers;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 public class ItemInit {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, CoolIdeasMod.MODID);
+
+    public static final RegistryObject<Item> SCYTHE = ITEMS.register("scythe",
+        () -> new ScytheItem(Tiers.NETHERITE, 6, -2.7F, 2D,
+            new Item.Properties()
+                .tab(CreativeModeTab.TAB_COMBAT)
+                .fireResistant()
+                .rarity(Rarity.RARE)
+        ));
 
     public static final RegistryObject<Item> WOODEN_SHORTBOW = ITEMS.register("wooden_shortbow",
         () -> new WoodenShortBowItem(new Item.Properties()
@@ -88,4 +99,25 @@ public class ItemInit {
             .tab(CreativeModeTab.TAB_MATERIALS)
             .stacksTo(1)
             .rarity(Rarity.UNCOMMON)));
+
+    public static final RegistryObject<Item> SOUL_VIAL = ITEMS.register("soul_vial",
+        () -> new SoulContainerBlockItem(BlockInit.SOUL_VIAL.get(),
+            new Item.Properties().tab(CreativeModeTab.TAB_MATERIALS),
+            SoulContainerBlockItem.ContainerTypes.VIAL
+        ));
+    public static final RegistryObject<Item> SOUL_BOTTLE = ITEMS.register("soul_bottle",
+        () -> new SoulContainerBlockItem(BlockInit.SOUL_BOTTLE.get(),
+            new Item.Properties().tab(CreativeModeTab.TAB_MATERIALS),
+            SoulContainerBlockItem.ContainerTypes.BOTTLE
+        ));
+    public static final RegistryObject<Item> SOUL_JAR = ITEMS.register("soul_jar",
+        () -> new SoulContainerBlockItem(BlockInit.SOUL_JAR.get(),
+            new Item.Properties().tab(CreativeModeTab.TAB_MATERIALS),
+            SoulContainerBlockItem.ContainerTypes.JAR
+        ));
+    public static final RegistryObject<Item> SOUL_GALLON = ITEMS.register("soul_gallon",
+        () -> new SoulContainerBlockItem(BlockInit.SOUL_GALLON.get(),
+            new Item.Properties().tab(CreativeModeTab.TAB_MATERIALS),
+            SoulContainerBlockItem.ContainerTypes.GALLON
+        ));
 }

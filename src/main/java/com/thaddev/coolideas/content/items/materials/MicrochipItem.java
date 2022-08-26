@@ -1,8 +1,10 @@
 package com.thaddev.coolideas.content.items.materials;
 
-import com.thaddev.coolideas.util.Utils;
+import com.thaddev.coolideas.Utils;
+import net.minecraft.core.NonNullList;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
+import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
@@ -11,7 +13,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-import static com.thaddev.coolideas.util.Utils.component;
+import static com.thaddev.coolideas.Utils.component;
 
 public class MicrochipItem extends Item {
     MicrochipTypes type;
@@ -84,6 +86,18 @@ public class MicrochipItem extends Item {
                 ints[i] = types[i].getId();
             }
             return ints;
+        }
+    }
+
+    @Override
+    public void fillItemCategory(CreativeModeTab pCategory, NonNullList<ItemStack> pItems) {
+        if (this.allowedIn(pCategory)){
+            pItems.add(new ItemStack(this));
+            ItemStack stack = new ItemStack(this);
+            for (MicrochipTypes type : MicrochipTypes.values()){
+                MicrochipItem.setType(stack, type);
+                pItems.add(stack);
+            }
         }
     }
 }

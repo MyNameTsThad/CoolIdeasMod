@@ -1,0 +1,58 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "rolls": 1,
+      "bonus_rolls": 0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "coolideas:soul_bottle",
+          "conditions": [
+            {
+              "condition": "minecraft:block_state_property",
+              "block": "coolideas:soul_bottle",
+              "properties": {
+                "filled": "false"
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "coolideas:soul_bottle",
+          "functions": [
+            {
+              "function": "minecraft:set_nbt",
+              "tag": "{Filled:true}"
+            }
+          ],
+          "conditions": [
+            {
+              "condition": "minecraft:block_state_property",
+              "block": "coolideas:soul_bottle",
+              "properties": {
+                "filled": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "minecraft:match_tool",
+          "predicate": {
+            "enchantments": [
+              {
+                "enchantment": "minecraft:silk_touch",
+                "levels": {
+                  "min": 1
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

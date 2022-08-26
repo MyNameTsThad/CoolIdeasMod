@@ -1,8 +1,8 @@
 package com.thaddev.coolideas.mixins;
 
 import com.thaddev.coolideas.CoolIdeasMod;
+import com.thaddev.coolideas.Utils;
 import com.thaddev.coolideas.client.gui.ModMismatchScreen;
-import com.thaddev.coolideas.util.Utils;
 import net.minecraft.ChatFormatting;
 import net.minecraft.SharedConstants;
 import net.minecraft.client.ClientBrandRetriever;
@@ -19,7 +19,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-import static com.thaddev.coolideas.util.Utils.component;
+import static com.thaddev.coolideas.Utils.component;
 
 @Mixin(ClientPacketListener.class)
 public abstract class ClientPacketListenerMixin {
@@ -36,8 +36,10 @@ public abstract class ClientPacketListenerMixin {
             String[] split = message.split(" ");
             String serverVersionString = split[2].substring(11, split[2].length() - 1);
             String serverVersion = serverVersionString.split("-")[2];
-            if (serverVersionString.split("-").length > 3)
+            if (serverVersionString.split("-").length > 3) {
+                serverVersion += "-";
                 serverVersion += serverVersionString.split("-")[3];
+            }
             String serverModLoader = serverVersionString.split("-")[0];
 
             String clientModLoader = ClientBrandRetriever.getClientModName();

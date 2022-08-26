@@ -1,0 +1,22 @@
+{
+  "variants": {
+    "container_count=1,filled=false": {
+      "model": "coolideas:block/soul_jar_one"
+    },
+    "container_count=1,filled=true": {
+      "model": "coolideas:block/soul_jar_one_filled"
+    },
+    "container_count=2,filled=false": {
+      "model": "coolideas:block/soul_jar_two"
+    },
+    "container_count=2,filled=true": {
+      "model": "coolideas:block/soul_jar_two_filled"
+    },
+    "container_count=3,filled=false": {
+      "model": "coolideas:block/soul_jar_three"
+    },
+    "container_count=3,filled=true": {
+      "model": "coolideas:block/soul_jar_three_filled"
+    }
+  }
+}

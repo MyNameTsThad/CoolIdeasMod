@@ -8,6 +8,7 @@
   },
   "refmap": "coolideas.mixin-refmap.json",
   "mixins": [
+    "ItemStackMixin",
     "MultiShotEnchantmentMixin"
   ],
   "client": [

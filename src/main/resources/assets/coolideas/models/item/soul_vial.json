@@ -1,0 +1,14 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "coolideas:items/soul_vial"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "coolideas:filled": 1
+      },
+      "model": "coolideas:item/soul_vial_filled"
+    }
+  ]
+}

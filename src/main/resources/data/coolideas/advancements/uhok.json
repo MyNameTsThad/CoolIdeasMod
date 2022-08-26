@@ -1,0 +1,45 @@
+{
+  "display": {
+    "icon": {
+      "item": "coolideas:scythe",
+      "nbt": "{Damage:0}"
+    },
+    "title": {
+      "translate": "advancements.coolideas.uhok.title"
+    },
+    "description": {
+      "translate": "advancements.coolideas.uhok.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "parent": "minecraft:husbandry/obtain_netherite_hoe",
+  "criteria": {
+    "till_dirt": {
+      "trigger": "minecraft:item_used_on_block",
+      "conditions": {
+        "item": {
+          "items": [
+            "coolideas:scythe"
+          ]
+        },
+        "location": {
+          "block": {
+            "blocks": [
+              "minecraft:farmland"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "till_dirt"
+    ]
+  ],
+  "rewards": {
+    "experience": 350
+  }
+}

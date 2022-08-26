@@ -1,0 +1,58 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "rolls": 1,
+      "bonus_rolls": 0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "coolideas:soul_jar",
+          "conditions": [
+            {
+              "condition": "minecraft:block_state_property",
+              "block": "coolideas:soul_jar",
+              "properties": {
+                "filled": "false"
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "coolideas:soul_jar",
+          "functions": [
+            {
+              "function": "minecraft:set_nbt",
+              "tag": "{Filled:true}"
+            }
+          ],
+          "conditions": [
+            {
+              "condition": "minecraft:block_state_property",
+              "block": "coolideas:soul_jar",
+              "properties": {
+                "filled": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "minecraft:match_tool",
+          "predicate": {
+            "enchantments": [
+              {
+                "enchantment": "minecraft:silk_touch",
+                "levels": {
+                  "min": 1
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

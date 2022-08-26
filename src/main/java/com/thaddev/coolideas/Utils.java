@@ -1,6 +1,5 @@
-package com.thaddev.coolideas.util;
+package com.thaddev.coolideas;
 
-import com.thaddev.coolideas.CoolIdeasMod;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 

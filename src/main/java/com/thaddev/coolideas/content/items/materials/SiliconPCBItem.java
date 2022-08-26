@@ -1,6 +1,6 @@
 package com.thaddev.coolideas.content.items.materials;
 
-import com.thaddev.coolideas.util.Utils;
+import com.thaddev.coolideas.Utils;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.Item;
@@ -11,7 +11,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-import static com.thaddev.coolideas.util.Utils.component;
+import static com.thaddev.coolideas.Utils.component;
 
 public class SiliconPCBItem extends Item {
     MicrochipItem.MicrochipTypes[] types;

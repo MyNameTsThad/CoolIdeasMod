@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "filled=false": {
+      "model": "coolideas:block/soul_gallon"
+    },
+    "filled=true": {
+      "model": "coolideas:block/soul_gallon_filled"
+    }
+  }
+}

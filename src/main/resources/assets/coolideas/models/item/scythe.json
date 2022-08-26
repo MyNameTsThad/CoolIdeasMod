@@ -1,0 +1,92 @@
+{
+  "credit": "Made with Blockbench",
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "coolideas:items/scythe"
+  },
+  "display": {
+    "thirdperson_righthand": {
+      "rotation": [
+        -44.5,
+        -90,
+        0
+      ],
+      "translation": [
+        0,
+        7.75,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        0.85
+      ]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [
+        -44.75,
+        90,
+        0
+      ],
+      "translation": [
+        0,
+        7.75,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        0.85
+      ]
+    },
+    "firstperson_righthand": {
+      "rotation": [
+        -17.87,
+        -78.56,
+        23.77
+      ],
+      "translation": [
+        1.13,
+        6,
+        1.13
+      ],
+      "scale": [
+        0.85,
+        0.85,
+        0.8
+      ]
+    },
+    "firstperson_lefthand": {
+      "rotation": [
+        -36,
+        90,
+        0
+      ],
+      "translation": [
+        1.13,
+        6,
+        1.13
+      ],
+      "scale": [
+        0.85,
+        0.85,
+        0.8
+      ]
+    },
+    "fixed": {
+      "scale": [
+        1.14,
+        1.14,
+        1
+      ]
+    }
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "coolideas:charged": 1
+      },
+      "model": "coolideas:item/scythe_charged"
+    }
+  ]
+}

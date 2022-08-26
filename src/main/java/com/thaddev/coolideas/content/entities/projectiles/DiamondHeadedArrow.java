@@ -20,6 +20,7 @@ import net.minecraft.world.entity.boss.enderdragon.phases.DragonPhaseInstance;
 import net.minecraft.world.entity.boss.enderdragon.phases.EnderDragonPhase;
 import net.minecraft.world.entity.boss.wither.WitherBoss;
 import net.minecraft.world.entity.monster.EnderMan;
+import net.minecraft.world.entity.monster.Enemy;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.item.ItemStack;
@@ -155,7 +156,7 @@ public class DiamondHeadedArrow extends AbstractArrow {
             this.setTarget();
             if (target != null && target.isAlive()) {
                 float i = 5f;
-                double diffY = target instanceof EnderDragon dragon ? dragon.getSubEntities()[1 /* Gets the Neck part */].getY() - this.getY() : target.getEyeY() - this.getY();
+                double diffY = target instanceof EnderDragon dragon ? dragon.getSubEntities()[2 /* Gets the Neck part */].getY() - this.getY() : target.getEyeY() - this.getY();
                 Vec3 vec3d = new Vec3(target.getX() - this.getX(), diffY, target.getZ() - this.getZ());
                 this.setPos(this.getX(), this.getY() + vec3d.y * 0.015D * (double) i, this.getZ());
                 if (this.level.isClientSide) {
@@ -323,6 +324,7 @@ public class DiamondHeadedArrow extends AbstractArrow {
             }
 
             potentialTargets.removeIf(LivingEntity::isDeadOrDying);
+            potentialTargets.removeIf(entity -> !(entity instanceof Enemy));
             potentialTargets.removeIf(entity -> !entity.hasLineOfSight(this));
             potentialTargets.removeIf(entity -> entity instanceof EnderMan);
             potentialTargets.removeIf(entity -> (entity instanceof WitherBoss boss && boss.isPowered()));

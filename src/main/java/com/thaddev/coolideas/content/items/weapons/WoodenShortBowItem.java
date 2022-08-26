@@ -1,7 +1,7 @@
 package com.thaddev.coolideas.content.items.weapons;
 
+import com.thaddev.coolideas.Utils;
 import com.thaddev.coolideas.mechanics.inits.ItemInit;
-import com.thaddev.coolideas.util.Utils;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -12,7 +12,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-import static com.thaddev.coolideas.util.Utils.component;
+import static com.thaddev.coolideas.Utils.component;
 
 public class WoodenShortBowItem extends ShortBowBase {
     public WoodenShortBowItem(Properties properties) {

@@ -18,6 +18,11 @@
   "item.coolideas.raw_silicon": "Raw Silicon",
   "item.coolideas.microchip": "Microchip",
   "item.coolideas.silicon_pcb": "Silicon PCB",
+  "item.coolideas.scythe": "Scythe",
+  "item.coolideas.soul_vial": "Soul Vial",
+  "item.coolideas.soul_bottle": "Soul Bottle",
+  "item.coolideas.soul_jar": "Soul Jar",
+  "item.coolideas.soul_gallon": "Soul Gallon",
 
   "item.minecraft.tipped_arrow.effect.vulnerability": "Arrow of Vulnerability",
 
@@ -49,5 +54,8 @@
   "menu.coolideas.modmismatchmessage.disconnect": "Disconnect",
   "menu.coolideas.modmismatchmessage.ignore": "Ignore and Continue",
   "menu.coolideas.modmismatchmessage.ignore_confirm": "NOT ADVISED! CONTINUE AT YOUR OWN RISK!",
-  "menu.coolideas.modmismatchmessage.no_download": "Download not available!"
+  "menu.coolideas.modmismatchmessage.no_download": "Download not available!",
+
+  "advancements.coolideas.uhok.title": "Uh ok? You good? Sure, I guess?",
+  "advancements.coolideas.uhok.description": "You know... you took all this time to make a scythe... and instead of using it as a quality weapon, You decided you would want to farm instead? Sure, I guess? Why not?"
 }
