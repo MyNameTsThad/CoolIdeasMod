@@ -1,5 +1,6 @@
 # Cool Ideas Mod
 ---
+# Cool Ideas Mod has switched to Architectury, a toolchain aimed to ease developing multiplatform mods. [go here](https://github.com/MyNameTsThad/CoolIdeasMod-Architectury).
 Cool Ideas that I have, had, and will have all combined into one mod.
 
 This mod will branch into some other mods, If I have some features I believe are good enough to be published.
